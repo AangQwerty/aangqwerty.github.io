@@ -1,1 +1,1 @@
-##### Portfolio sederhana [Saya](instagram.com/aang.dev) 👋
+##### Portfolio sederhana saya 👋
