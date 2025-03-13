@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirecting...</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    fetch('links.json')
+      .then(response => response.json())
+      .then(data => {
+        const link = data['file1'];
+        if (link) {
+          window.open('https://sfl.gd/ads-page', '_blank'); // Iklan Popunder
+          setTimeout(() => {
+            window.location.href = link; // Redirect ke link download
+          }, 5000); // Delay 5 detik
+        } else {
+          window.location.href = '/404.html'; // Redirect jika link tidak ditemukan
+        }
+      });
+
+    // Anti Inspect Element
+    document.addEventListener('contextmenu', event => event.preventDefault());
+    document.addEventListener('keydown', event => {
+      if (event.ctrlKey && (event.key === 'u' || event.key === 'U')) {
+        event.preventDefault();
+      }
+    });
+  </script>
+</head>
+<body>
+  <div class="container">
+    <img src="https://raw.githubusercontent.com/AangQwerty/AangQwerty/refs/heads/main/Img/Favicon/IMG_20250208_151104_-removebg-preview.png" alt="Logo DoodBocil" class="logo">
+    <h2>Tunggu 5 detik sebelum download dimulai...</h2>
+    <div class="loading-bar"></div>
+    <p>&copy; 2025 DoodBocil.biz.id. All rights reserved.</p>
+  </div>
+</body>
+</html>
